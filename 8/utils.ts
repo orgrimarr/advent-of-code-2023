@@ -38,7 +38,7 @@ export function part1(inputFile: string): number {
     return stepCount
 }
 
-
+// Use LCM but it's may not be the best / shortest solution
 export function part2(inputFile: string): number {
     function gcd(a: number, b: number): number {
         if (b == 0)
