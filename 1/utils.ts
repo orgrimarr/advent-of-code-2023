@@ -1,6 +1,7 @@
+import {getLines} from "../common.ts";
+
 export function part1(inputFile: string): number {
-    const lines = inputFile
-        .split('\n').map(line => line.trim())
+    const lines = getLines(inputFile)
     const numbers = lines.map(line => {
         const chars = line.split('')
         const first = chars.find(char => !!char.match(/\d/)) ?? '0';

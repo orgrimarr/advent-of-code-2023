@@ -1,3 +1,5 @@
+import {getLines} from "../common.ts";
+
 type Rules = {
     [key: string]: number
     blue: number,
@@ -6,8 +8,7 @@ type Rules = {
 }
 
 export function part1(inputFile: string, rules: Rules): { sum: number, possible: number[] } {
-    const lines = inputFile
-        .split('\n').map(line => line.trim())
+    const lines = getLines(inputFile)
     const parsed = lines.map(line => {
         return {
             id: parseInt(line.split(':')[0].split(' ')[1]),
@@ -53,8 +54,7 @@ export function part1(inputFile: string, rules: Rules): { sum: number, possible:
 
 
 export function part2(inputFile: string): number {
-    const lines = inputFile
-        .split('\n').map(line => line.trim())
+    const lines = getLines(inputFile)
     const parsed = lines.map(line => {
         return {
             id: parseInt(line.split(':')[0].split(' ')[1]),

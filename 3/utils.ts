@@ -1,3 +1,5 @@
+import {getLines} from "../common.ts";
+
 type Point = {
     value: string,
     position: {
@@ -92,8 +94,7 @@ function isValid(numbers: GearWithAdjacent): boolean {
 }
 
 export function part1(inputFile: string): number {
-    const lines = inputFile
-        .split('\n').map(line => line.trim())
+    const lines = getLines(inputFile)
     const gearWithAdjacents = listNumbersWithAdjacents(lines)
     const validNumbers = gearWithAdjacents.filter(isValid)
     // const invalidNumbers = gearWithAdjacents.filter(str => !isValid(str))
@@ -105,8 +106,7 @@ export function part1(inputFile: string): number {
 
 
 export function part2(inputFile: string): number {
-    const lines = inputFile
-        .split('\n').map(line => line.trim())
+    const lines = getLines(inputFile)
     const gearWithAdjacents = listNumbersWithAdjacents(lines)
     const stars = listStarSymbols(lines)
     const gearRations: number[] = []

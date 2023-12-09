@@ -1,3 +1,5 @@
+import {getLines} from "../common.ts";
+
 type Maze = {
     [key: string]: {
         R: string,
@@ -6,8 +8,7 @@ type Maze = {
 }
 
 export function part1(inputFile: string): number {
-    const lines = inputFile
-        .split('\n').map(line => line.trim())
+    const lines = getLines(inputFile)
     const map = lines[0].split('').map(dir => dir.trim()) as 'R'[] & 'L'[]
     const mazeLines = lines
         .slice(2)
@@ -50,8 +51,7 @@ export function part2(inputFile: string): number {
         return (a / gcd(a, b)) * b;
     }
 
-    const lines = inputFile
-        .split('\n').map(line => line.trim())
+    const lines = getLines(inputFile)
     const map = lines[0].split('').map(dir => dir.trim()) as 'R'[] & 'L'[]
     const mazeLines = lines
         .slice(2)
